@@ -159,9 +159,9 @@ if &background == "dark"
     call s:ac('Pmenu', 'cyan', 'base02', 'BOLD')
     call s:ac('PmenuSel', 'cyan', 'base02', 'BOLD')
     call s:ac('Search', 'cyan', 'base02', 'BOLD')
-    call s:ac('TabLineFill', 'base01', 'base02', 'NONE')
-    call s:ac('TabLine', 'base3', 'base02', 'NONE')
-    call s:ac('TabLineSel', 'base0', 'base03', 'NONE')
+    call s:ac('TabLineFill', 'base01', 'base02', 'NONE') " rest
+    call s:ac('TabLine', 'base0', 'base02', 'NONE') " inactive
+    call s:ac('TabLineSel', 'base2', 'base03', 'BOLD') " active
   endif
 else " light
   " base
