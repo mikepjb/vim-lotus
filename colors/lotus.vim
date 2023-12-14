@@ -7,24 +7,54 @@ endif
 
 let colors_name = "lotus"
 
+" foreground:     #ffffff
+" background:     #2c2c2c
+" cursorColor:    #ffffff
+" black:          #444444
+" bright-black:   #5e5e5e
+" red:            #ffb2b2
+" bright-red:     #ff8c8c
+" green:          #cbffb2
+" bright-green:   #8bff95
+" yellow:         #ffdfb2
+" bright-yellow:  #ffd08d
+" blue:           #b3ccff
+" bright-blue:    #4fa7ff
+" magenta:        #ffb3ff
+" bright-magenta: #ff8dff
+" cyan:           #b2fff5
+" bright-cyan:    #8dfff0
+" white:          #cdcdcd
+" bright-white:   #e5e5e5
+
 let s:color_names = {
-      \'base03':      8,
-      \'base02':      0,
-      \'base01':      10,
-      \'base00':      11,
-      \'base0':       12,
-      \'base1':       14,
-      \'base2':       7,
-      \'base3':       15,
-      \'red':         1,
-      \'dark-red':    9,
-      \'green':       2,
-      \'yellow':      3,
-      \'blue':        4,
-      \'dark-yellow': 5,
-      \'dark-green':  13,
-      \'cyan':        6,
-      \'NONE':        16,
+      \'base03':        8,
+      \'base02':        0,
+      \'base01':        10,
+      \'base00':        11,
+      \'base0':         12,
+      \'base1':         14,
+      \'base2':         7,
+      \'base3':         15,
+      \'black':         0,
+      \'bright-black':  8,
+      \'red':           1,
+      \'bright-red':    9,
+      \'green':         2,
+      \'bright-green':  10,
+      \'yellow':        3,
+      \'bright-yellow': 11,
+      \'blue':          4,
+      \'bright-blue':   12,
+      \'pink':          5,
+      \'bright-pink':   13,
+      \'cyan':          6,
+      \'bright-cyan':   14,
+      \'white':         7,
+      \'bright-white':  15,
+      \'dark-yellow':   5,
+      \'dark-green':    13,
+      \'NONE':          16,
       \}
 
 let s:gui_colors = [
@@ -115,9 +145,9 @@ hi link diffIndexLine         DiffChange
 
 if &background == "dark"
   " base
-  call s:ac('Normal', 'base3', 'base03', 'NONE')
-  call s:ac('NonText', 'base3', 'base03', 'NONE')
-  call s:ac('Comment', 'base1', 'base03', 'NONE')
+  call s:ac('Normal', 'base3', 'NONE', 'NONE')
+  call s:ac('NonText', 'base3', 'NONE', 'NONE')
+  call s:ac('Comment', 'base1', 'NONE', 'NONE')
   call s:ac('TODO', 'yellow', 'NONE', 'NONE')
   " syntax
   call s:ac('Type', 'green', 'NONE', 'NONE')
@@ -154,7 +184,7 @@ if &background == "dark"
   call s:ac('StatusLineNC', 'cyan', 'base02', 'NONE')
   call s:ac('Visual', 'NONE', 'base02', 'NONE')
   call s:ac('Cursor', 'base01', 'base03', 'NONE')
-  call s:ac('LineNr', 'base01', 'base03', 'NONE')
+  call s:ac('LineNr', 'bright-black', 'NONE', 'NONE')
   if version >= 700 " Vim 7.x specific colors
     call s:ac('CursorLine', 'NONE', 'base02', 'BOLD')
     call s:ac('CursorColumn', 'cyan', 'base02', 'BOLD')
@@ -206,9 +236,9 @@ else " light
   call s:ac('Cursor', 'base1', 'base3', 'NONE')
   call s:ac('LineNr', 'base1', 'base3', 'NONE')
   if version >= 700 " Vim 7.x specific colors
-    call s:ac('CursorLine', 'NONE', 'base2', 'BOLD')
-    call s:ac('CursorColumn', 'blue', 'base2', 'BOLD')
-    call s:ac('CursorLineNr', 'blue', 'base2', 'BOLD')
+    call s:ac('CursorLine', 'NONE', 'base02', 'BOLD')
+    call s:ac('CursorColumn', 'blue', 'base02', 'BOLD')
+    call s:ac('CursorLineNr', 'blue', 'base02', 'BOLD')
     call s:ac('Pmenu', 'base02', 'base2', 'BOLD')
     call s:ac('PmenuSel', 'blue', 'base1', 'BOLD')
     call s:ac('Search', 'blue', 'base2', 'BOLD')
